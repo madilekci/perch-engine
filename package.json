@@ -1,0 +1,31 @@
+{
+  "name": "perch-engine",
+  "version": "1.0.0",
+  "description": "This API wants to be a search engine when she grows up.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madilekci/perch-engine.git"
+  },
+  "keywords": [
+    "search",
+    "engine",
+    "puppeteer",
+    "learning"
+  ],
+  "author": "madilekci",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/madilekci/perch-engine/issues"
+  },
+  "homepage": "https://github.com/madilekci/perch-engine#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.20",
+    "puppeteer": "^18.0.5"
+  }
+}
