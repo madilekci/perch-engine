@@ -8,8 +8,8 @@
 * Website Description
 * Website URL
 
-The search request will be a GET request and we're going to make use of URL Query Params to specify the search query. The user will send a request to ```/search``` with search query ```searchquery=cats``` like this : 
-> ```localhost:3000/search?searchquery=cat```
+The search request will be a GET request and we're going to make use of URL Query Params to specify the search query. The user will send a request to ```/search``` with search query parameter ```searchquery=cats``` like this : 
+> https://perch-engine.herokuapp.com/search?searchquery=nodejs
 
 API will return the top Results about cats from Google in JSON:
 
