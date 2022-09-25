@@ -28,7 +28,10 @@ const parseSearchResults = async (rawData) => {
 };
 
 const searchGoogle = async (searchQuery) => {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+        headless: true,
+        args: ['--no-sandbox','--disable-setuid-sandbox']
+    });
 
     const page = await browser.newPage();
     await page.setRequestInterception(true);
