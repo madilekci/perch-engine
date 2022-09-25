@@ -1,8 +1,10 @@
 const express = require('express');
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 8080;
+const IP = process.env.IP || '0.0.0.0';
 
 const searchGoogle = require('./searchGoogle');
+
 
 //Catches GET requests made to localhost:3000/search
 app.get('/search', async (req, res) => {
@@ -19,5 +21,5 @@ app.get('/search', async (req, res) => {
     }
 });
 
-//Initialises the express server on the port 30000
-app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`));
+//Initialises the express server on the port 8080
+app.listen(PORT, IP, () => console.log(`Example app listening on port ${PORT}!`));
