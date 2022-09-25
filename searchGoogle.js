@@ -34,7 +34,7 @@ const searchGoogle = async (searchQuery) => {
     const page = await browser.newPage();
     await page.goto(`https://google.com/search?q=${searchQuery}`,  { waitUntil: 'networkidle0' });
 
-    const rawData = await page.evaluate(() => document.querySelector('*').outerHTML);
+    const rawData = await page.evaluate(() => document.querySelector('#rso').outerHTML);
     const results = await parseSearchResults(rawData);
 
     await browser.close();
