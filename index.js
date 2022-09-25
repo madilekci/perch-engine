@@ -5,6 +5,10 @@ const IP = process.env.IP || '0.0.0.0';
 
 const searchGoogle = require('./searchGoogle');
 
+app.get('/', async (req, res) => {
+  res.status(200);
+  res.send('You can make searchs like this : \'https://perch-engine.herokuapp.com/search?searchquery=dog\'');
+});
 
 //Catches GET requests made to localhost:3000/search
 app.get('/search', async (req, res) => {
