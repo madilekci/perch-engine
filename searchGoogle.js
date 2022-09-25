@@ -32,6 +32,15 @@ const searchGoogle = async (searchQuery) => {
     const browser = await puppeteer.launch();
 
     const page = await browser.newPage();
+    await page.setRequestInterception(true);
+    //if the page makes a  request to a resource type of image or stylesheet then abort that request
+    page.on('request', request => {
+        if (request.resourceType() === 'image' || request.resourceType() === 'stylesheet')
+        request.abort();
+        else
+        request.continue();
+    });
+
     await page.goto(`https://google.com/search?q=${searchQuery}`,  { waitUntil: 'networkidle0' });
 
     const rawData = await page.evaluate(() => document.querySelector('#rso').outerHTML);
