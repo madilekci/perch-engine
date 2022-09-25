@@ -5,7 +5,6 @@ const parseSearchResults = async (rawData) => {
     const $ = cheerio.load(rawData);
 
     const searchResultsList = [];
-    const searchResultsSelectorString = 'div > style + div';
     $('[data-sokoban-container]')
         .each((index, element) => {
             searchResultsList.push($(element));
@@ -46,7 +45,7 @@ const searchGoogle = async (searchQuery) => {
     const rawData = await page.evaluate(() => document.querySelector('#rso').outerHTML);
     const results = await parseSearchResults(rawData);
 
-    await browser.close();
+    browser.close();
 
     return results;
 };
