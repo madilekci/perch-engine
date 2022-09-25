@@ -1,5 +1,5 @@
-import puppeteer from'puppeteer';
-import cheerio from 'cheerio';
+const puppeteer = require('puppeteer');
+const cheerio = require('cheerio');
 
 const parseSearchResults = async (rawData) => {
     const $ = cheerio.load(rawData);
